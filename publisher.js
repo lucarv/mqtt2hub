@@ -1,4 +1,6 @@
-var mqtt = require('mqtt')
+'use strict';
+require('dotenv').config();
+const mqtt = require('mqtt')
 const clientId = "mqtt-js-01";
 
 var mclient = mqtt.connect("mqtt://ekskog.net", {

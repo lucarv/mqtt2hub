@@ -1,13 +1,13 @@
 'use strict';
 require('dotenv').config();
-var mqtt = require('mqtt');
-var mclient = mqtt.connect(process.env.broker);
+const mqtt = require('mqtt');
+const mclient = mqtt.connect(process.env.broker);
 
-var Protocol = require('azure-iot-device-mqtt').Mqtt;
-var Client = require('azure-iot-device').Client;
-var Message = require('azure-iot-device').Message;
-var connectionString = process.env.CS;
-var azclient = Client.fromConnectionString(connectionString, Protocol);
+const Protocol = require('azure-iot-device-mqtt').Mqtt;
+const Client = require('azure-iot-device').Client;
+const Message = require('azure-iot-device').Message;
+const connectionString = process.env.CS;
+const azclient = Client.fromConnectionString(connectionString, Protocol);
 azclient.open(function (err) {
     if (err) {
         console.error('Could not connect: ' + err.message);
